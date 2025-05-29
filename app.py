@@ -8,7 +8,7 @@ from PIL import Image
 import base64
 
 st.title("Conversión de Texto a Audio")
-image = Image.open('gato_raton.png')
+image = Image.open('Boltund.png')
 st.image(image, width=350)
 with st.sidebar:
     st.subheader("Esrcibe y/o selecciona texto para ser escuchado.")
@@ -19,27 +19,32 @@ try:
 except:
     pass
 
-st.subheader("Una pequeña Fábula.")
-st.write('¡Ay! -dijo el ratón-. El mundo se hace cada día más pequeño. Al principio era tan grande que le tenía miedo. '  
-         ' Corría y corría y por cierto que me alegraba ver esos muros, a diestra y siniestra, en la distancia. ' 
-         ' Pero esas paredes se estrechan tan rápido que me encuentro en el último cuarto y ahí en el rincón está '  
-         ' la trampa sobre la cual debo pasar. Todo lo que debes hacer es cambiar de rumbo dijo el gato...y se lo comió. ' 
+st.subheader("Boltund")
+st.write('La electricidad que genera y envía a sus patas le ayuda a desplazarse rápidamente. Puede correr sin descanso durante tres días y tres noches.' 
          '  '
-         ' Franz Kafka.'
+         'Pokédex'
         
         )
            
 st.markdown(f"Quieres escucharlo?, copia el texto")
-text = st.text_area("Ingrese El texto a escuchar.")
-
+text = st.text_area("Ingrese el texto que quieres escuchar:")
+s
 tld='com'
 option_lang = st.selectbox(
     "Selecciona el lenguaje",
-    ("Español", "English"))
+    ("Español", "English", "Ελληνικά", "Русский", "Français", "العربية"))
 if option_lang=="Español" :
     lg='es'
 if option_lang=="English" :
     lg='en'
+if option_lang=="Ελληνικά" :
+    lg='el'
+if option_lang=="Русский" :
+    lg='ru'
+if option_lang=="Français" :
+    lg='fr'
+if option_lang =="العربية" :
+    lg='ar'
 
 def text_to_speech(text, tld,lg):
     
@@ -54,11 +59,11 @@ def text_to_speech(text, tld,lg):
 
 #display_output_text = st.checkbox("Verifica el texto")
 
-if st.button("convertir a Audio"):
+if st.button("Convertir a audio"):
      result, output_text = text_to_speech(text, 'com',lg)#'tld
      audio_file = open(f"temp/{result}.mp3", "rb")
      audio_bytes = audio_file.read()
-     st.markdown(f"## Tú audio:")
+     st.markdown(f"## Tu audio:")
      st.audio(audio_bytes, format="audio/mp3", start_time=0)
 
      #if display_output_text:
