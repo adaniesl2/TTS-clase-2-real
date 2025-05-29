@@ -26,7 +26,7 @@ st.write('La electricidad que genera y envía a sus patas le ayuda a desplazarse
         
         )
            
-st.markdown(f"Quieres escucharlo?, copia el texto")
+st.markdown(f"¿Quieres escucharlo? Copia el texto")
 text = st.text_area("Ingrese el texto que quieres escuchar:")
 stld='com'
 option_lang = st.selectbox(
