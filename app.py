@@ -4,7 +4,7 @@ import time
 import glob
 import os
 from gtts import gTTS
-from PIL import Image
+import Image
 import base64
 
 st.title("Conversión de Texto a Audio")
